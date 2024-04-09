@@ -3,7 +3,7 @@ My Ubuntu setup script
 
 Run with:
 ```
-curl -o- https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/setup.sh | bash
+bash <(curl -s https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/setup.sh)
 ```
 
 ## Features

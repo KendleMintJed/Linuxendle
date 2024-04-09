@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -i
 
 touch ~/.hushlogin
 
@@ -18,7 +18,7 @@ git config --global user.name "$gitUser"
 git config --global user.email $gitEmail
 
 # Install Node.js
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+bash <(curl -s https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh)
 . ~/.bashrc
 nvm install 21
 
