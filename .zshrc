@@ -79,3 +79,8 @@ bindkey -M vicmd 'j' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 # You should use
 source ~/.local/share/zsh/zsh-you-should-use/you-should-use.plugin.zsh
+
+# Alieses
+alias ls='exa'
+lfcd() { cd "$(command lf -print-last-dir "$@")" }
+

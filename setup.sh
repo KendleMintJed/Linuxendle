@@ -11,7 +11,8 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # Install dependencies
-sudo apt install git zsh build-essential luarocks cargo dotnet6 ripgrep libnotify-bin -y
+sudo apt install git zsh build-essential luarocks cargo dotnet6 ripgrep exa -y
+sudo snap install go --classic
 
 # Set git config
 git config --global user.name "$gitUser"
@@ -28,6 +29,11 @@ nvm install 21
 sudo snap install nvim --classic
 # Install NVChendle
 git clone https://github.com/NvChad/starter ~/.config/nvim 
+
+# Install lf
+env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
+sudo cp ~/go/bin/lf /usr/bin/
+sudo rm -rf ~/go
 
 # Configure Zsh
 sudo chsh -s $(which zsh) $(whoami)
