@@ -11,7 +11,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # Install dependencies
-sudo apt install git zsh build-essential luarocks cargo dotnet6 ripgrep -y
+sudo apt install git zsh build-essential luarocks cargo dotnet6 ripgrep libnotify-bin -y
 
 # Set git config
 git config --global user.name "$gitUser"
@@ -29,10 +29,18 @@ sudo snap install nvim --classic
 # Install NVChendle
 git clone https://github.com/NvChad/starter ~/.config/nvim 
 
-# Install Oh My Zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+# Configure Zsh
 sudo chsh -s $(which zsh) $(whoami)
 curl -o ~/.zshrc https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/.zshrc
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.local/share/zsh/powerlevel10k
+curl -o ~/.p10k.zsh https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/.p10k.zsh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.local/share/zsh/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.local/share/zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-history-substring-search ~/.local/share/zsh/zsh-history-substring-search
+git clone https://github.com/MichaelAquilina/zsh-you-should-use ~/.local/share/zsh/zsh-you-should-use
 
 # Launch NeoVim
 nvim
+
+# Launch Zsh
+zsh
