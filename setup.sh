@@ -11,7 +11,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # Install dependencies
-sudo apt install git zsh build-essential luarocks cargo dotnet6 ripgrep exa -y
+sudo apt install git zsh build-essential luarocks dotnet6 ripgrep exa -y
 sudo snap install go --classic
 
 # Set git config
@@ -25,10 +25,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install 21
 
+# Install Rust
+curl https://sh.rustup.rs -sSf | sh -s -- -y
+
 # Install NeoVim
 sudo snap install nvim --classic
 # Install NVChendle
-git clone https://github.com/NvChad/starter ~/.config/nvim 
+git clone https://github.com/KendleMintJed/nvchendle ~/.config/nvim 
 
 # Install lf
 env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
