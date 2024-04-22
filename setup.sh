@@ -11,7 +11,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # Install dependencies
-sudo apt install git zsh build-essential luarocks dotnet6 ripgrep exa -y
+sudo apt install -y git zsh build-essential luarocks dotnet6 ripgrep exa libffi-dev libffi8ubuntu1 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 python3.10-venv
 sudo snap install go --classic
 
 # Set git config
@@ -27,6 +27,9 @@ nvm install 21
 
 # Install Rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+# Install Haskell
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | BOOTSTRAP_HASKELL_NONINTERACTIVE=1 BOOTSTRAP_HASKELL_GHC_VERSION=latest BOOTSTRAP_HASKELL_CABAL_VERSION=latest BOOTSTRAP_HASKELL_INSTALL_STACK=1 BOOTSTRAP_HASKELL_INSTALL_HLS=0 BOOTSTRAP_HASKELL_ADJUST_BASHRC=N sh
 
 # Install NeoVim
 sudo snap install nvim --classic
