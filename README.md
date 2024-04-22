@@ -1,16 +1,36 @@
 # Ubendle
 My Ubuntu setup script
 
-Run with:
+## Dependencies
+- bash
+- apt
+- snap
+- curl
+
+Install with:
 ```
 bash <(curl -s https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/setup.sh)
 ```
 
-## Features
-# Packages
+## Installs
+### Programs
+- neovim ([nvchendle](https://github.com/KendleMintJed/nvchendle))
 - zsh
-- build essential (c/c++)
-- luarocks
-- cargo (rust)
+    - p10k prompt
+    - vim mode
+    - syntax highlighting
+    - auto suggestions
+    - history substring search
+    - you should use
+- git
+- lf
+- exa
+- ripgrep
+
+### Language support
+- C/C++ (build essentials)
+- rust
 - dotnet6
-- neovim (nvchendle)
+- node v21 (nvm v0.39.1)
+- lua
+- go
