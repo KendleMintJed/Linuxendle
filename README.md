@@ -23,6 +23,7 @@ bash <(curl -s https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/setu
     - history substring search
     - you should use
 - git
+- lazygit
 - lf
 - exa
 - ripgrep
