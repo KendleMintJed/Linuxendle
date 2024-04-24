@@ -3,7 +3,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Add path variables
+# Add snap to path
 export PATH=/snap/bin:$PATH
 
 # Set history
@@ -23,6 +23,13 @@ export NVM_DIR="$HOME/.nvm"
 
 # Import Haskell
 source ~/.ghcup/env
+
+# Setup fzf
+if [[ ! "$PATH" == */home/kendle/.fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/home/kendle/.fzf/bin"
+fi
+
+eval "$(fzf --zsh)"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -86,4 +93,3 @@ source ~/.local/share/zsh/zsh-you-should-use/you-should-use.plugin.zsh
 # Alieses
 alias ls='exa'
 lfcd() { cd "$(command lf -print-last-dir "$@")" }
-

@@ -23,6 +23,15 @@ tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 rm lazygit.tar.gz lazygit
 
+# Install lf
+env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
+sudo cp ~/go/bin/lf /usr/bin/
+sudo rm -rf ~/go
+
+# Install fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzfgit clone --depth 1 
+~/.fzf/install --key-bindings --completion --no-update-rc
+
 # Set git config
 git config --global user.name "$gitUser"
 git config --global user.email $gitEmail
@@ -41,16 +50,12 @@ curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 # Install Haskell
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | BOOTSTRAP_HASKELL_NONINTERACTIVE=1 BOOTSTRAP_HASKELL_GHC_VERSION=latest BOOTSTRAP_HASKELL_CABAL_VERSION=latest BOOTSTRAP_HASKELL_INSTALL_STACK=1 BOOTSTRAP_HASKELL_INSTALL_HLS=0 BOOTSTRAP_HASKELL_ADJUST_BASHRC=N sh
+curl -o ~/.ghci https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/.ghci
 
 # Install NeoVim
 sudo snap install nvim --classic
 # Install NVChendle
 git clone https://github.com/KendleMintJed/nvchendle ~/.config/nvim 
-
-# Install lf
-env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
-sudo cp ~/go/bin/lf /usr/bin/
-sudo rm -rf ~/go
 
 # Configure Zsh
 sudo chsh -s $(which zsh) $(whoami)
