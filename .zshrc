@@ -31,6 +31,35 @@ fi
 
 eval "$(fzf --zsh)"
 
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix"
+
+_fzf_compgen_path() {
+  fd --hidden . "$1"
+}
+
+_fzf_compgen_dir() {
+  fd --type d --hidden . "$1"
+}
+
+source ~/fzf-git.sh/fzf-git.sh
+
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always --icons=always {} | head -200'"
+
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always --icons=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo \$'{}"                                        "$@" ;;
+    ssh)          fzf --preview 'dig {}'                                                  "$@" ;;
+    *)            fzf --preview "bat -n --color=always --line-range :500 {}"              "$@" ;;
+  esac
+}
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -91,5 +120,7 @@ bindkey -M vicmd 'k' history-substring-search-up
 source ~/.local/share/zsh/zsh-you-should-use/you-should-use.plugin.zsh
 
 # Alieses
-alias ls='exa'
+eval "$(zoxide init zsh)"
+alias cd='z'
+alias ls='eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
 lfcd() { cd "$(command lf -print-last-dir "$@")" }

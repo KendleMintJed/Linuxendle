@@ -13,7 +13,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # Install dependencies
-sudo apt install -y git zsh build-essential luarocks dotnet6 ripgrep exa libffi-dev libffi8ubuntu1 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 python3.10-venv
+sudo apt install -y git zsh build-essential luarocks dotnet6 ripgrep libffi-dev libffi8ubuntu1 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 python3.10-venv
 sudo snap install go --classic
 
 # Install LazyGit
@@ -22,6 +22,7 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/lates
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 rm lazygit.tar.gz lazygit
+curl -o ~/.config/lazygit/config.yml https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/lazygit.config.yml
 
 # Install lf
 env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
@@ -31,11 +32,12 @@ sudo rm -rf ~/go
 # Install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzfgit clone --depth 1 
 ~/.fzf/install --key-bindings --completion --no-update-rc
+git clone https://github.com/junegunn/fzf-git.sh.git --depth=1 ~/.fzf-git.sh
 
 # Set git config
+curl -o ~/.gitconfig https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/.gitconfig
 git config --global user.name "$gitUser"
 git config --global user.email $gitEmail
-git config --global credentials.helper store
 echo "https://$gitUser:$gitToken@$gitHost" > touch ~/.git-credentials
 
 # Install Node.js
@@ -47,6 +49,19 @@ nvm install 21
 
 # Install Rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+# Install eza
+cargo install eza
+# Install bat
+cargo install bat --locked
+# Install fd
+cargo install fd-find
+# Install git-delta
+cargo install git-delta
+# Install tldr
+cargo install tlrc
+# Install zoxide
+cargo install zoxide --locked
 
 # Install Haskell
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | BOOTSTRAP_HASKELL_NONINTERACTIVE=1 BOOTSTRAP_HASKELL_GHC_VERSION=latest BOOTSTRAP_HASKELL_CABAL_VERSION=latest BOOTSTRAP_HASKELL_INSTALL_STACK=1 BOOTSTRAP_HASKELL_INSTALL_HLS=0 BOOTSTRAP_HASKELL_ADJUST_BASHRC=N sh

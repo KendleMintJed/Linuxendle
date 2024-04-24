@@ -23,14 +23,22 @@ bash <(curl -s https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/setu
     - history substring search
     - you should use
 - git
-- lazygit
+    - lazygit
+    - git delta
 - lf
-- exa
+- eza
 - ripgrep
+- fzf
+- fd
+- bat
+- zoxide
+- tldr
 
 ### Language support
 - C/C++ (build essentials)
 - rust
+- haskell
+- python
 - dotnet6
 - node v21 (nvm v0.39.1)
 - lua
