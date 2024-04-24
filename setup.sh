@@ -3,8 +3,10 @@
 touch ~/.hushlogin
 
 # Get git credentials
-read -p "Enter git username: " gitUser
 read -p "Enter git email: " gitEmail
+read -p "Enter git username: " gitUser
+read -p "Enter git token: " gitToken
+read -p "Enter git host: " gitHost
 
 # Update packages
 sudo apt update -y
@@ -24,6 +26,8 @@ rm lazygit.tar.gz lazygit
 # Set git config
 git config --global user.name "$gitUser"
 git config --global user.email $gitEmail
+git config --global credentials.helper store
+echo "https://$gitUser:$gitToken@$gitHost" > touch ~/.git-credentials
 
 # Install Node.js
 bash <(curl -s https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh)
