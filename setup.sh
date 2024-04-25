@@ -13,7 +13,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # Install dependencies
-sudo apt install -y git zsh build-essential luarocks dotnet6 ripgrep libffi-dev libffi8ubuntu1 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 python3 python3.10-venv pip gdb
+sudo apt install -y git zsh build-essential luarocks dotnet6 ripgrep libffi-dev libffi8ubuntu1 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 python3 python3.10-venv pip gdb lldb
 sudo snap install go --classic
 
 # Install LazyGit

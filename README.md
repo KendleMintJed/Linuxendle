@@ -34,9 +34,10 @@ bash <(curl -s https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/setu
 - tldr
 
 ### Language support
-- C/C++
-    - build essentials
+- Debuggers
     - gdb
+    - lldb
+- C/C++ (build essentials)
 - rust
 - haskell
 - python
