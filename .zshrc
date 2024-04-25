@@ -123,3 +123,8 @@ source ~/.local/share/zsh/zsh-you-should-use/you-should-use.plugin.zsh
 eval "$(zoxide init zsh)"
 alias cd='z'
 alias ls='eza --color=always --icons=always'
+alias ll='eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
+alias tree='eza --tree --color=always --icons=always'
+alias md='mkdir'
+alias lg='lazygit'
+alias 
