@@ -13,7 +13,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # Install dependencies
-sudo apt install -y git zsh build-essential luarocks dotnet6 ripgrep libffi-dev libffi8ubuntu1 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 python3.10-venv
+sudo apt install -y git zsh build-essential luarocks dotnet6 ripgrep libffi-dev libffi8ubuntu1 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 python3.10-venv pip
 sudo snap install go --classic
 
 # Install LazyGit
@@ -30,7 +30,7 @@ sudo cp ~/go/bin/lf /usr/bin/
 sudo rm -rf ~/go
 
 # Install fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzfgit clone --depth 1 
+git clone --depth=1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --key-bindings --completion --no-update-rc
 git clone https://github.com/junegunn/fzf-git.sh.git --depth=1 ~/.fzf-git.sh
 

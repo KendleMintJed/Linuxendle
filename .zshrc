@@ -43,7 +43,7 @@ _fzf_compgen_dir() {
   fd --type d --hidden . "$1"
 }
 
-source ~/fzf-git.sh/fzf-git.sh
+source ~/.fzf-git.sh/fzf-git.sh
 
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always --icons=always {} | head -200'"
@@ -122,5 +122,5 @@ source ~/.local/share/zsh/zsh-you-should-use/you-should-use.plugin.zsh
 # Alieses
 eval "$(zoxide init zsh)"
 alias cd='z'
-alias ls='eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
+alias ls='eza --color=always --icons=always'
 lfcd() { cd "$(command lf -print-last-dir "$@")" }
