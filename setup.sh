@@ -13,7 +13,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # Install dependencies
-sudo apt install -y git zsh build-essential luarocks dotnet6 ripgrep libffi-dev libffi8ubuntu1 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 python3.10-venv pip
+sudo apt install -y git zsh build-essential luarocks dotnet6 ripgrep libffi-dev libffi8ubuntu1 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 python3 python3.10-venv pip gdb
 sudo snap install go --classic
 
 # Install LazyGit
@@ -23,11 +23,6 @@ tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 rm lazygit.tar.gz lazygit
 curl -o ~/.config/lazygit/config.yml https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/lazygit.config.yml
-
-# Install lf
-env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
-sudo cp ~/go/bin/lf /usr/bin/
-sudo rm -rf ~/go
 
 # Install fzf
 git clone --depth=1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -81,6 +76,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.local/share/zs
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.local/share/zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-history-substring-search ~/.local/share/zsh/zsh-history-substring-search
 git clone https://github.com/MichaelAquilina/zsh-you-should-use ~/.local/share/zsh/zsh-you-should-use
+
+# Autoremove packages
+sudo apt autoremove -y
 
 # Launch NeoVim
 nvim

@@ -25,7 +25,6 @@ bash <(curl -s https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/setu
 - git
     - lazygit
     - git delta
-- lf
 - eza
 - ripgrep
 - fzf
@@ -35,7 +34,9 @@ bash <(curl -s https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/setu
 - tldr
 
 ### Language support
-- C/C++ (build essentials)
+- C/C++
+    - build essentials
+    - gdb
 - rust
 - haskell
 - python

@@ -123,4 +123,3 @@ source ~/.local/share/zsh/zsh-you-should-use/you-should-use.plugin.zsh
 eval "$(zoxide init zsh)"
 alias cd='z'
 alias ls='eza --color=always --icons=always'
-lfcd() { cd "$(command lf -print-last-dir "$@")" }
