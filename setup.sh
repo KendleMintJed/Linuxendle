@@ -22,6 +22,7 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/lates
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 rm lazygit.tar.gz lazygit
+mkdir ~/.config/lazygit
 curl -o ~/.config/lazygit/config.yml https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/lazygit.config.yml
 
 # Install fzf
@@ -33,7 +34,7 @@ git clone https://github.com/junegunn/fzf-git.sh.git --depth=1 ~/.fzf-git.sh
 curl -o ~/.gitconfig https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/.gitconfig
 git config --global user.name "$gitUser"
 git config --global user.email $gitEmail
-echo "https://$gitUser:$gitToken@$gitHost" > touch ~/.git-credentials
+echo "https://$gitUser:$gitToken@$gitHost" > ~/.git-credentials
 
 # Install Node.js
 bash <(curl -s https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh)
@@ -45,6 +46,7 @@ nvm install 21
 # Install Rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 
+source ~/.cargo/env
 # Install eza
 cargo install eza
 # Install bat
