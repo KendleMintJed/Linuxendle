@@ -40,7 +40,7 @@ _fzf_compgen_path() {
 }
 
 _fzf_compgen_dir() {
-  fd --type d --hidden . "$1"
+  fd --type=d --hidden . "$1"
 }
 
 source ~/.fzf-git.sh/fzf-git.sh
