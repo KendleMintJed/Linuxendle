@@ -24,44 +24,6 @@ export NVM_DIR="$HOME/.nvm"
 # Import Haskell
 source ~/.ghcup/env
 
-# Setup fzf
-if [[ ! "$PATH" == */home/kendle/.fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/home/kendle/.fzf/bin"
-fi
-
-eval "$(fzf --zsh)"
-
-export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix"
-
-_fzf_compgen_path() {
-  fd --hidden . "$1"
-}
-
-_fzf_compgen_dir() {
-  fd --type=d --hidden . "$1"
-}
-
-source ~/.fzf-git.sh/fzf-git.sh
-
-show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always --icons=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
-
-export FZF_CTRL_T_OPTS="-- preview '$show_file_or_dir_preview'"
-export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always --icons=always {} | head -200'"
-
-_fzf_comprun() {
-  local command=$1
-  shift
-
-  case "$command" in
-    cd)           fzf --preview 'eza --tree --color=always --icons=always {} | head -200' "$@" ;;
-    export|unset) fzf --preview "eval 'echo \$'{}"                                        "$@" ;;
-    ssh)          fzf --preview 'dig {}'                                                  "$@" ;;
-    *)            fzf --preview "$show_file_or_dir_preview"                               "$@" ;;
-  esac
-}
-
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -85,6 +47,44 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -v '^?' backward-delete-char
+
+# Setup fzf
+if [[ ! "$PATH" == */home/kendle/.fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/home/kendle/.fzf/bin"
+fi
+
+eval "$(fzf --zsh)"
+
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix"
+
+_fzf_compgen_path() {
+  fd --hidden . "$1"
+}
+
+_fzf_compgen_dir() {
+  fd --type=d --hidden . "$1"
+}
+
+source ~/.fzf-git.sh/fzf-git.sh
+
+show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always --icons=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
+
+export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always --icons=always {} | head -200'"
+
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always --icons=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo \$'{}"                                        "$@" ;;
+    ssh)          fzf --preview 'dig {}'                                                  "$@" ;;
+    *)            fzf --preview "$show_file_or_dir_preview"                               "$@" ;;
+  esac
+}
 
 # Change cursor shape
 function zle-keymap-select {
