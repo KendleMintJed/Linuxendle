@@ -23,7 +23,7 @@ tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 rm lazygit.tar.gz lazygit
 mkdir -p ~/.config/lazygit
-curl -o ~/.config/lazygit/config.yml https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/lazygit.config.yml
+curl -o ~/.config/lazygit/config.yml https://raw.githubusercontent.com/KendleMintJed/Linuxendle/ubuntu/lazygit.config.yml
 
 # Install fzf
 git clone --depth=1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -31,7 +31,7 @@ git clone --depth=1 https://github.com/junegunn/fzf.git ~/.fzf
 git clone https://github.com/junegunn/fzf-git.sh.git --depth=1 ~/.fzf-git.sh
 
 # Set git config
-curl -o ~/.gitconfig https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/.gitconfig
+curl -o ~/.gitconfig https://raw.githubusercontent.com/KendleMintJed/Linuxendle/ubuntu/.gitconfig
 git config --global user.name "$gitUser"
 git config --global user.email $gitEmail
 echo "https://$gitUser:$gitToken@$gitHost" > ~/.git-credentials
@@ -62,7 +62,7 @@ cargo install zoxide --locked
 
 # Install Haskell
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | BOOTSTRAP_HASKELL_NONINTERACTIVE=1 BOOTSTRAP_HASKELL_GHC_VERSION=latest BOOTSTRAP_HASKELL_CABAL_VERSION=latest BOOTSTRAP_HASKELL_INSTALL_STACK=1 BOOTSTRAP_HASKELL_INSTALL_HLS=0 BOOTSTRAP_HASKELL_ADJUST_BASHRC=N sh
-curl -o ~/.ghci https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/.ghci
+curl -o ~/.ghci https://raw.githubusercontent.com/KendleMintJed/Linuxendle/ubuntu/.ghci
 
 # Install NeoVim
 sudo snap install nvim --classic
@@ -71,9 +71,9 @@ git clone https://github.com/KendleMintJed/nvchendle ~/.config/nvim
 
 # Configure Zsh
 sudo chsh -s $(which zsh) $(whoami)
-curl -o ~/.zshrc https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/.zshrc
+curl -o ~/.zshrc https://raw.githubusercontent.com/KendleMintJed/Linuxendle/ubuntu/.zshrc
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.local/share/zsh/powerlevel10k
-curl -o ~/.p10k.zsh https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/.p10k.zsh
+curl -o ~/.p10k.zsh https://raw.githubusercontent.com/KendleMintJed/Linuxendle/ubuntu/.p10k.zsh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.local/share/zsh/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.local/share/zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-history-substring-search ~/.local/share/zsh/zsh-history-substring-search

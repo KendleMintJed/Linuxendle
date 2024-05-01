@@ -9,7 +9,7 @@ My Ubuntu setup script
 
 Install with:
 ```
-bash <(curl -s https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/setup.sh)
+bash <(curl -s https://raw.githubusercontent.com/KendleMintJed/Linuxendle/ubuntu/setup.sh)
 ```
 
 ## Installs
