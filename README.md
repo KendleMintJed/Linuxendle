@@ -8,7 +8,7 @@ My arch setup script for WSL
 
 Install with:
 ```
-bash <(curl -s https://raw.githubusercontent.com/KendleMintJed/Ubendle/arch/setup.sh)
+bash <(curl -s https://raw.githubusercontent.com/KendleMintJed/Linuxendle/arch/setup.sh)
 ```
 
 ## Installs
