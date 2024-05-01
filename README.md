@@ -1,15 +1,14 @@
-# Ubendle
-My Ubuntu setup script
+# Archendle
+My arch setup script for WSL
 
 ## Dependencies
 - bash
-- apt
-- snap
+- pacman
 - curl
 
 Install with:
 ```
-bash <(curl -s https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/setup.sh)
+bash <(curl -s https://raw.githubusercontent.com/KendleMintJed/Ubendle/arch/setup.sh)
 ```
 
 ## Installs
@@ -32,6 +31,7 @@ bash <(curl -s https://raw.githubusercontent.com/KendleMintJed/Ubendle/main/setu
 - bat
 - zoxide
 - tldr
+- neofetch
 
 ### Language support
 - Debuggers
