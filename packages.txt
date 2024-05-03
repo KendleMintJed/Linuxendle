@@ -10,6 +10,7 @@ tldr
 zoxide
 neovim
 neofetch
+yt-dlp
 luarocks
 dotnet-sdk-6.0
 python
