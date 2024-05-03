@@ -27,7 +27,7 @@ mkdir -p ~/.config/lazygit
 curl -o ~/.config/lazygit/config.yml https://raw.githubusercontent.com/kendlemintjed/Linuxendle/arch/lazygit.config.yml
 
 # Install Node.js
-bash < (curl -s https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
