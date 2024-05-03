@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/mnt/c/Users/jamie/OneDrive/Pictures/Saved Pictures/rem-wallpaper.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0c1022",
+        "foreground": "#e6e5ee",
+        "cursor": "#e6e5ee"
+    },
+    "colors": {
+        "color0": "#0c1022",
+        "color1": "#546DBB",
+        "color2": "#AA7E82",
+        "color3": "#6E91D6",
+        "color4": "#B99EA2",
+        "color5": "#9EB1E5",
+        "color6": "#B3CBF4",
+        "color7": "#e6e5ee",
+        "color8": "#a1a0a6",
+        "color9": "#546DBB",
+        "color10": "#AA7E82",
+        "color11": "#6E91D6",
+        "color12": "#B99EA2",
+        "color13": "#9EB1E5",
+        "color14": "#B3CBF4",
+        "color15": "#e6e5ee"
+    }
+}

@@ -26,6 +26,10 @@ echo "https://$gitUser:$gitToken@$gitHost" > ~/.git-credentials
 mkdir -p ~/.config/lazygit
 curl -o ~/.config/lazygit/config.yml https://raw.githubusercontent.com/kendlemintjed/Linuxendle/arch/lazygit.config.yml
 
+# Download pywal theme
+mkdir -p ~/.config/wal/colorschemes/dark
+curl -o ~/.config/wal/colorschemes/dark/rem_dark_1.1.0.json https://raw.githubusercontent.com/kendlemintjed/Linuxendle/arch/rem_dark_1.1.0.json
+
 # Install Node.js
 bash <(curl -s https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh)
 export NVM_DIR="$HOME/.nvm"

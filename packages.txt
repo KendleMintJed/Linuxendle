@@ -14,5 +14,6 @@ luarocks
 dotnet-sdk-6.0
 python
 python-pip
+python-pywal
 gdb
 lldb

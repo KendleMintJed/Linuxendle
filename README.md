@@ -32,6 +32,8 @@ bash <(curl -s https://raw.githubusercontent.com/KendleMintJed/Linuxendle/arch/s
 - zoxide
 - tldr
 - neofetch
+- pywal
+    - custom colorscheme
 
 ### Language support
 - Debuggers

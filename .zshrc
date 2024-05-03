@@ -121,6 +121,9 @@ bindkey -M vicmd 'k' history-substring-search-up
 # You should use
 source ~/.local/share/zsh/zsh-you-should-use/you-should-use.plugin.zsh
 
+# Set color scheme
+wal -q -f rem_dark_1.1.0
+
 # Alieses
 eval "$(zoxide init zsh)"
 alias cd='z'
