@@ -23,7 +23,7 @@ git clone https://aur.archlinux.org/yay.git ~/yay
 rm -rf ~/yay
 
 # Install ani-cli
-yes | LANG=C yay -S ani-cli
+yay -S --noconfirm ani-cli
 
 # Set git config
 curl -o ~/.gitconfig https://raw.githubusercontent.com/KendleMintJed/Linuxendle/arch/.gitconfig

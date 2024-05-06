@@ -4,7 +4,9 @@ My arch setup script for WSL
 ## Dependencies
 - bash
 - pacman
+- git
 - curl
+- makepkg
 
 Install with:
 ```
@@ -24,14 +26,17 @@ bash <(curl -s https://raw.githubusercontent.com/KendleMintJed/Linuxendle/arch/s
 - git
     - lazygit
     - git delta
+- yay
 - eza
 - ripgrep
 - fzf
 - fd
 - bat
 - zoxide
+- man
 - tldr
 - neofetch
+- ani-cli
 - pywal
     - custom colorscheme
 
