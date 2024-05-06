@@ -11,10 +11,19 @@ sudo pacman -Syu --noconfirm
 
 # Install dependencies
 sudo pacman -S --noconfirm --needed $(curl -s https://raw.githubusercontent.com/KendleMintJed/Linuxendle/arch/packages.txt)
+
 # Install fzf
 git clone --depth=1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --key-bindings --completion --no-update-rc
 git clone https://github.com/junegunn/fzf-git.sh.git --depth=1 ~/.fzf-git.sh
+
+# Install yay
+git clone https://aur.archlinux.org/yay.git ~/yay
+(cd ~/yay && makepkg -is --noconfirm)
+rm -rf ~/yay
+
+# Install ani-cli
+yes | LANG=C yay -S ani-cli
 
 # Set git config
 curl -o ~/.gitconfig https://raw.githubusercontent.com/KendleMintJed/Linuxendle/arch/.gitconfig

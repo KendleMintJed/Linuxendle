@@ -7,6 +7,7 @@ bat
 fd
 git-delta
 tldr
+man
 zoxide
 neovim
 neofetch
@@ -16,5 +17,6 @@ dotnet-sdk-6.0
 python
 python-pip
 python-pywal
+go
 gdb
 lldb
