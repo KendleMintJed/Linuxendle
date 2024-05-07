@@ -25,6 +25,14 @@ rm -rf ~/yay
 # Install ani-cli
 yay -S --noconfirm ani-cli
 
+# Set locale
+sudo rm /etc/locale.gen
+sudo curl -o /etc/locale.gen https://raw.githubusercontent.com/KendleMintJed/Linuxendle/arch/locale.gen
+sudo locale-gen en_GB.UTF-8 UTF-8
+export LANG=en_GB.UTF-8
+export LANGUAGE=en_GB.UTF-8
+export LC_ALL=en_GB.UTF-8
+
 # Set git config
 curl -o ~/.gitconfig https://raw.githubusercontent.com/KendleMintJed/Linuxendle/arch/.gitconfig
 git config --global user.name "$gitUser"
