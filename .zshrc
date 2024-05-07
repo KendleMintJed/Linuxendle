@@ -16,6 +16,11 @@ setopt appendhistory autocd extendedglob nomatch interactive_comments
 zle_highlight=('paste:none')
 unsetopt BEEP
 
+# Set locale
+export LANGUAGE=en_GB.UTF-8
+export LANG=en_GB.UTF-8
+export LC_ALL=en_GB.UTF-8
+
 # Import nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
